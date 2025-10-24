@@ -92,7 +92,7 @@ def visualize_alignment(
     cp = torch.load(ckpt_path, map_location=dev)
     encoder.load_state_dict(cp["encoder"], strict=False)
     encoder.eval()
-    print(f"✅ Loaded encoder from {ckpt_path}")
+    print(f"Loaded encoder from {ckpt_path}")
 
     # ---- load datasets ----
     src_ds = UCIHARDataset(uci_root, "train")
@@ -138,7 +138,7 @@ def visualize_alignment(
     if save_fig:
         out_path = os.path.join(os.path.dirname(ckpt_path), f"alignment_{method}.png")
         plt.savefig(out_path, dpi=300)
-        print(f"💾 Saved figure to {out_path}")
+        print(f"Saved figure to {out_path}")
     plt.show()
 
 # ================================================================
